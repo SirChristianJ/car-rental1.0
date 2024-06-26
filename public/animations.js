@@ -7,6 +7,8 @@ const carLogoArr = ['images/carillus1.png','images/carillus2.png','images/carill
 var mainImg = 0;
 const img = document.getElementById('image-slideshow-container');
 const carNameArr = ['Lamborghini','Mustang','Cadillac','Hellcat','Tesla','Jeep','Ferrari'];
+const rent = document.getElementsByClassName('rent');
+const info = document.getElementsByClassName('info');
 
 function loadCalender(){
    const calenderElem = document.getElementById('sched');
@@ -123,4 +125,18 @@ function secondPage(){
         page.appendChild(carLogos);
     })
     
+}
+
+for(let i = 0; i < 4; i++){
+rent[i].addEventListener("click", () => {
+    let x = i;
+    if(x == 0)
+        window.location.href = 'http://localhost:8080/bmw';
+    else if(x==1)   
+        window.location.href = 'http://localhost:8080/honda';
+    else if(x==2)   
+        window.location.href = 'http://localhost:8080/tesla';
+    else if(x==3)   
+        window.location.href = 'http://localhost:8080/jeep';
+    });
 }
