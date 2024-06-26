@@ -1,0 +1,32 @@
+{
+  "name": "demo1.0scratch",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "lil-gui": "^0.19.2",
+    "mongodb": "^6.7.0",
+    "MONGODB_URI": "mongodb+srv://admin:<password>@cluster0.ed5hb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    "mongoose": "^8.4.0",
+    "path": "^0.12.7",
+    "three": "^0.165.0"
+  },
+  "devDependencies": {
+    "@types/dat.gui": "^0.7.13",
+    "concurrently": "^8.2.2",
+    "dat.gui": "^0.7.9",
+    "vite": "^5.2.12"
+  },
+  "description": ""
+}

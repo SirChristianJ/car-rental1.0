@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/styles.css" type="text/css">
+    </head>
+    <body onload="loadCalender()" id="bookingBody">
+
+        <div class="nav-bar">
+            <a href = "/" class="nav-bar-transition">Home</a>
+            <a href="/cars" class="nav-bar-transition">Cars</a>
+            <a href="/about" class="nav-bar-transition">About Us</a>
+            <a href="/bookingpage" class="nav-bar-transition">Book A Rental</a>
+            <a href="/signup" class="nav-bar-transition">Sign Up</a>
+        </div>
+
+        <h1 id="cal-header">Schedule your rental days !</h1>
+        <h2 id="month"></h2>
+        <button id="prev" onclick="changeMonthPrev()">⬅️</button>
+        <button id="next" onclick="changeMonthNext()">➡️</button>
+        <div class="schedule" id="sched"></div>
+        <div id="reservation">
+            <form action="/bookingpage" method="post">
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstName" name="firstName">
+                <br>
+                <br>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName">
+                <br>
+                <br>
+                <label for="startDate">Start Date:</label>
+                <input type="datetime-local" id="startDate" name="startDate">
+                <br>
+                <br>
+                <label for="endDate">End Date:</label>
+                <input type="datetime-local" id="endDate" name="endDate">
+                <br>
+                <br>
+                <button>Book rental</button>
+            </form>
+        </div>
+        <script src="animations.js" async defer></script>
+    </body>
+</html>
