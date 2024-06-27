@@ -9,6 +9,11 @@ const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
 const saltRounds = 10;
 const session = require('express-session');
+const carRouter = require('./routes/cars');
+const teslaRouter = require('./routes/tesla');
+const hondaRouter = require('./routes/honda');
+const jeepRouter = require('./routes/jeep');
+const toyotaRouter = require('./routes/toyota');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname,'/public')));
@@ -18,7 +23,13 @@ app.use(session({
     saveUninitialized: true,
     resave: true
 }));
+app.use(carRouter);
+app.use(teslaRouter);
+app.use(hondaRouter);
+app.use(jeepRouter);
+app.use(toyotaRouter);
 
+//app.set('view engine', 'html');
 
 /* /* mongoose.connect('mongodb+srv://root:root@cluster0.ed5hb.mongodb.net/UsersDB').then(console.log("Successful connection!"));
 
@@ -124,29 +135,29 @@ app.get('/logout', (req, res) => {
     res.send("You are logged out!");
 });
 
-app.get('/cars', (req, res) => {
+/* app.get('/cars', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/cars.html'));
-})
+}) */
 
 app.get('/about', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/about.html'));
 })
 
-app.get('/tesla', (req, res) => {
+/* app.get('/tesla', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/tesla.html'));
-})
+}) */
 
-app.get('/honda', (req, res) => {
+/* app.get('/honda', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/honda.html'));
-})
+}) */
 
-app.get('/toyota', (req, res) => {
+/* app.get('/toyota', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/toyota.html'));
-})
+}) */
 
-app.get('/jeep', (req, res) => {
+/* app.get('/jeep', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/jeep.html'));
-})
+}) */
 
 app.get('/bmw', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/bmw.html'));
@@ -168,7 +179,7 @@ app.post('/bookingpage',async (req, res) => {
     res.status(201).json({message: "Congratulations " + reservations.firstName + "! Your Rental has been succesfully booked!"});
 })
 
-app.get('/tesla/modelX', (req,res) => {
+/* app.get('/tesla/modelX', (req,res) => {
     res.sendFile(path.join(__dirname,  'public/teslaViews/modelX.html'))
 });
 
@@ -186,9 +197,9 @@ app.get('/tesla/model3', (req,res) => {
 
 app.get('/tesla/cybertruck', (req,res) => {
     res.sendFile(path.join(__dirname,  'public/teslaViews/cybertruck.html'))
-});
+}); */
 
-app.get('/honda/civic', (req,res) => {
+/* app.get('/honda/civic', (req,res) => {
     res.sendFile(path.join(__dirname,  'public/hondaViews/civic.html'))
 });
 
@@ -206,9 +217,9 @@ app.get('/honda/crv24', (req,res) => {
 
 app.get('/honda/accord', (req,res) => {
     res.sendFile(path.join(__dirname,  'public/hondaViews/accord.html'))
-});
+}); */
 
-app.get('/toyota/rav4', (req,res) => {
+/* app.get('/toyota/rav4', (req,res) => {
     res.sendFile(path.join(__dirname,  'public/toyotaViews/rav4.html'))
 });
 
@@ -226,9 +237,9 @@ app.get('/toyota/tocoma', (req,res) => {
 
 app.get('/toyota/tocoma24', (req,res) => {
     res.sendFile(path.join(__dirname,  'public/toyotaViews/tocoma2024.html'))
-});
+}); */
 
-app.get('/jeep/wrangler20', (req,res) => {
+/* app.get('/jeep/wrangler20', (req,res) => {
     res.sendFile(path.join(__dirname,  'public/jeepViews/wrangler2020.html'))
 });
 
@@ -246,7 +257,7 @@ app.get('/jeep/rubicon22', (req,res) => {
 
 app.get('/jeep/rubicon24', (req,res) => {
     res.sendFile(path.join(__dirname,  'public/jeepViews/rubicon2024.html'))
-});
+}); */
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 app.listen(8080,() => {
     console.log("Server is running on Port 8080");
